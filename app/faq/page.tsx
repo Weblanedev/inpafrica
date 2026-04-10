@@ -3,10 +3,22 @@ import Link from "next/link";
 import FaqIllustration from "@/components/FaqIllustration";
 import FaqList from "@/components/FaqList";
 
+const faqDesc =
+  "What is INP Africa, how delivery works, and how vendor and affiliate commissions are shared.";
+
 export const metadata: Metadata = {
-  title: "FAQ | INP Africa",
-  description:
-    "What is INP Africa, how delivery works, and how vendor and affiliate commissions are shared.",
+  title: "FAQ",
+  description: faqDesc,
+  alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "FAQ | INP Africa",
+    description: faqDesc,
+    url: "/faq",
+  },
+  twitter: {
+    title: "FAQ | INP Africa",
+    description: faqDesc,
+  },
 };
 
 export default function FaqPage() {

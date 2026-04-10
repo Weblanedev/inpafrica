@@ -7,7 +7,8 @@ import { CurrencyProvider } from "@/context/CurrencyContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastHost from "@/components/ToastHost";
-import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
+import JsonLd from "@/components/JsonLd";
+import { rootMetadata } from "@/lib/siteMetadata";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -19,10 +20,7 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
 });
 
-export const metadata: Metadata = {
-  title: "INP Africa | Business & Affiliate Marketing Books",
-  description: `${AFFILIATE_TAGLINE} Shop digital books and grow with INP Africa.`,
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -35,6 +33,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${dmSans.variable} ${jetbrains.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-bg font-body text-text antialiased">
+        <JsonLd />
         <AuthProvider>
           <CurrencyProvider>
             <CartProvider>

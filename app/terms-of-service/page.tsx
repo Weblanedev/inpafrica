@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const termsDesc =
+  "Terms and conditions for using INP Africa: buyers, affiliates, vendors, and digital book purchases.";
+
 export const metadata: Metadata = {
-  title: "Terms of Service | INP Africa",
-  description:
-    "Terms and conditions for using INP Africa: buyers, affiliates, vendors, and digital book purchases.",
+  title: "Terms of Service",
+  description: termsDesc,
+  alternates: { canonical: "/terms-of-service" },
+  openGraph: {
+    title: "Terms of Service | INP Africa",
+    description: termsDesc,
+    url: "/terms-of-service",
+  },
+  twitter: {
+    title: "Terms of Service | INP Africa",
+    description: termsDesc,
+  },
 };
 
 export default function TermsOfServicePage() {

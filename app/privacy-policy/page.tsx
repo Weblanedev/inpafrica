@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const privacyDesc =
+  "How INP Africa collects, uses, and protects your personal information.";
+
 export const metadata: Metadata = {
-  title: "Privacy Policy | INP Africa",
-  description:
-    "How INP Africa collects, uses, and protects your personal information.",
+  title: "Privacy Policy",
+  description: privacyDesc,
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy | INP Africa",
+    description: privacyDesc,
+    url: "/privacy-policy",
+  },
+  twitter: {
+    title: "Privacy Policy | INP Africa",
+    description: privacyDesc,
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,11 +1,58 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { books, getBookBySlug, getRelatedBooks } from "@/data/books";
 import ProductPurchaseSection from "@/components/ProductPurchaseSection";
 import RelatedBooks from "@/components/RelatedBooks";
+import { SITE_NAME } from "@/lib/siteMetadata";
+
+function truncateMeta(text: string, max = 160): string {
+  const t = text.trim();
+  if (t.length <= max) return t;
+  return `${t.slice(0, max - 1).trimEnd()}…`;
+}
 
 export function generateStaticParams() {
   return books.map((b) => ({ slug: b.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const book = getBookBySlug(slug);
+  if (!book) {
+    return { title: "Book not found" };
+  }
+  const description = truncateMeta(book.description);
+  const ogTitle = `${book.title} | ${SITE_NAME}`;
+  return {
+    title: book.title,
+    description,
+    alternates: { canonical: `/products/${slug}` },
+    openGraph: {
+      title: ogTitle,
+      description,
+      url: `/products/${slug}`,
+      type: "website",
+      images: [
+        {
+          url: book.coverUrl,
+          width: 300,
+          height: 420,
+          alt: book.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [book.coverUrl],
+    },
+  };
 }
 
 export default async function ProductPage({

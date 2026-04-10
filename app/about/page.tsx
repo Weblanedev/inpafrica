@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
+
+const aboutDesc =
+  "Learn about INP Africa: affordable digital books in XAF, community, and our mission for entrepreneurs across Africa.";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: aboutDesc,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | INP Africa",
+    description: aboutDesc,
+    url: "/about",
+  },
+  twitter: {
+    title: "About | INP Africa",
+    description: aboutDesc,
+  },
+};
 
 export default function AboutPage() {
   return (

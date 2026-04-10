@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
+
+const contactDesc = `Contact INP Africa for orders, affiliates, and vendors. ${AFFILIATE_TAGLINE}`;
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: contactDesc,
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | INP Africa",
+    description: contactDesc,
+    url: "/contact",
+  },
+  twitter: {
+    title: "Contact | INP Africa",
+    description: contactDesc,
+  },
+};
 
 export default function ContactPage() {
   return (
