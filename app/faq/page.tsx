@@ -33,7 +33,7 @@ export default function FaqPage() {
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-gold">
             Help
           </p>
-          <h1 className="font-display mt-3 text-center text-4xl font-bold leading-tight text-text md:text-5xl">
+          <h1 className="font-display mt-3 text-center text-3xl font-bold leading-tight text-text sm:text-4xl md:text-5xl">
             Frequently Asked Questions
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">
@@ -52,16 +52,20 @@ export default function FaqPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-16">
-        <p className="text-center text-sm text-muted">
-          Still stuck?{" "}
+        <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-center text-sm text-muted">
+          <span>Still stuck?</span>
           <Link href="/contact" className="font-medium text-gold hover:underline">
             Contact us
           </Link>
-          {" · "}
+          <span aria-hidden className="text-border">
+            ·
+          </span>
           <Link href="/affiliate" className="font-medium text-gold hover:underline">
             Affiliate program
           </Link>
-          {" · "}
+          <span aria-hidden className="text-border">
+            ·
+          </span>
           <Link href="/vendor" className="font-medium text-gold hover:underline">
             Vendor program
           </Link>

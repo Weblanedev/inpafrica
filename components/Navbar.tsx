@@ -29,8 +29,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 h-16 border-b border-border bg-surface/95 backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Logo />
+      <div className="mx-auto flex h-full min-w-0 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6">
+        <div className="shrink-0">
+          <Logo />
+        </div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map(({ href, label }) => (
@@ -48,7 +50,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-3">
           <CurrencySwitcher />
           <CartIcon />
           {!loading && !user && (

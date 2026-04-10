@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid gap-12 text-center md:grid-cols-2 md:text-left lg:grid-cols-4">
+          <div className="mx-auto max-w-md md:mx-0 md:max-w-none">
             <p className="font-display text-xl font-semibold text-text">
               INP Africa
             </p>

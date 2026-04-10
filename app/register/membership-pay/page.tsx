@@ -91,7 +91,7 @@ export default function MembershipPayPage() {
         shopHref="/products"
       />
 
-      <div className="w-full max-w-lg rounded-2xl border border-border bg-surface p-8 shadow-xl">
+      <div className="w-full max-w-lg rounded-2xl border border-border bg-surface p-5 shadow-xl sm:p-8">
         <div className="flex justify-center">
           <Logo />
         </div>

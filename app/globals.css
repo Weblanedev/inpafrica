@@ -22,11 +22,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
+  overflow-x: clip;
   background-color: var(--color-bg);
   color: var(--color-text);
+  min-width: 0;
 }
 
 @keyframes shimmer {

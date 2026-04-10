@@ -36,7 +36,7 @@ export default function ProductPurchaseSection({ book }: { book: Book }) {
       <span className="inline-block rounded-full bg-teal/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal">
         {categoryHeading[book.category]}
       </span>
-      <h1 className="font-display mt-4 text-3xl font-bold leading-tight text-text md:text-4xl">
+      <h1 className="font-display mt-4 text-balance break-words text-3xl font-bold leading-tight text-text md:text-4xl">
         {book.title}
       </h1>
       <p className="mt-2 text-lg text-muted">{book.author}</p>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
@@ -22,6 +22,16 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = rootMetadata;
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f4f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +48,7 @@ export default function RootLayout({
           <CurrencyProvider>
             <CartProvider>
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="min-w-0 flex-1 overflow-x-clip">{children}</main>
               <Footer />
               <ToastHost />
             </CartProvider>

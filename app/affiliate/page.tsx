@@ -22,7 +22,7 @@ export default function AffiliatePage() {
     <div>
       <section className="border-b border-border bg-gradient-to-br from-bg via-surface to-bg py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h1 className="font-display text-4xl font-bold text-text md:text-5xl">
+          <h1 className="font-display text-3xl font-bold text-text sm:text-4xl md:text-5xl">
             Turn Your Audience Into Income
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-text">
@@ -55,7 +55,7 @@ export default function AffiliatePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">
                   1
                 </span>
-                <span>
+                <span className="min-w-0">
                   <strong className="text-text">Create your account.</strong>{" "}
                   Registration is free. You must be signed in before you can pay
                   for Starter or Pro.
@@ -65,7 +65,7 @@ export default function AffiliatePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">
                   2
                 </span>
-                <span>
+                <span className="min-w-0">
                   <strong className="text-text">
                     Choose a plan &amp; pay.
                   </strong>{" "}
@@ -79,7 +79,7 @@ export default function AffiliatePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">
                   3
                 </span>
-                <span>
+                <span className="min-w-0">
                   <strong className="text-text">Promote with your link.</strong>{" "}
                   Share your unique URL on social, email, or WhatsApp.
                 </span>
@@ -88,7 +88,7 @@ export default function AffiliatePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">
                   4
                 </span>
-                <span>
+                <span className="min-w-0">
                   <strong className="text-text">Get paid.</strong> Add payout
                   details in your dashboard. Commissions are paid on a schedule
                   once you reach the withdrawal threshold.
@@ -253,7 +253,7 @@ export default function AffiliatePage() {
             and perks.
           </p>
           <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-12">
-            <div className="rounded-2xl border border-border bg-bg p-10 shadow-sm">
+            <div className="rounded-2xl border border-border bg-bg p-6 shadow-sm sm:p-10">
               <h3 className="font-display text-2xl text-text">Starter</h3>
               <p className="mt-1 text-sm font-medium uppercase tracking-wide text-muted">
                 Best for new promoters
@@ -272,7 +272,7 @@ export default function AffiliatePage() {
                 <li>Monthly tips email for affiliates</li>
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-gold bg-surface2 p-10 shadow-lg">
+            <div className="rounded-2xl border-2 border-gold bg-surface2 p-6 shadow-lg sm:p-10">
               <h3 className="font-display text-2xl text-text">Pro</h3>
               <p className="mt-1 text-sm font-medium uppercase tracking-wide text-muted">
                 For serious partners

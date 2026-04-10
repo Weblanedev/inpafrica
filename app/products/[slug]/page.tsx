@@ -66,9 +66,9 @@ export default async function ProductPage({
   const related = getRelatedBooks(book, 4);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
-      <div className="grid gap-12 lg:grid-cols-5 lg:gap-14">
-        <div className="lg:col-span-2">
+    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-24">
+      <div className="grid min-w-0 gap-12 lg:grid-cols-5 lg:gap-14">
+        <div className="min-w-0 lg:col-span-2">
           <div className="relative mx-auto aspect-[3/4] max-w-[300px] overflow-hidden rounded-xl border border-border bg-surface2">
             <Image
               src={book.coverUrl}
@@ -86,7 +86,7 @@ export default async function ProductPage({
             </span>
           </div>
         </div>
-        <div className="lg:col-span-3">
+        <div className="min-w-0 lg:col-span-3">
           <ProductPurchaseSection book={book} />
         </div>
       </div>

@@ -161,64 +161,76 @@ export default function CartPage() {
               return (
                 <div
                   key={book.slug}
-                  className="flex gap-4 rounded-xl border border-border bg-surface p-4 shadow-sm"
+                  className="rounded-xl border border-border bg-surface p-4 shadow-sm"
                 >
-                  <div className="relative h-[70px] w-[50px] shrink-0 overflow-hidden rounded border border-border">
-                    <Image
-                      src={book.coverUrl}
-                      alt={book.title}
-                      fill
-                      className="object-cover"
-                      sizes="50px"
-                      unoptimized
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <Link
-                      href={`/products/${book.slug}`}
-                      className="font-medium text-text hover:text-gold"
-                    >
-                      {book.title}
-                    </Link>
-                    <p className="font-mono text-sm text-muted">
-                      {formatCurrency(unit)} each
-                    </p>
-                    <div className="mt-2 flex flex-wrap items-center gap-3">
-                      <div className="flex items-center rounded-lg border border-border">
+                  <div className="flex gap-4">
+                    <div className="relative h-[70px] w-[50px] shrink-0 overflow-hidden rounded border border-border">
+                      <Image
+                        src={book.coverUrl}
+                        alt={book.title}
+                        fill
+                        className="object-cover"
+                        sizes="50px"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                        <div className="min-w-0">
+                          <Link
+                            href={`/products/${book.slug}`}
+                            className="break-words font-medium text-text hover:text-gold"
+                          >
+                            {book.title}
+                          </Link>
+                          <p className="font-mono text-sm text-muted">
+                            {formatCurrency(unit)} each
+                          </p>
+                        </div>
+                        <p className="hidden shrink-0 font-mono text-sm text-text sm:block sm:pt-0.5 sm:text-right">
+                          {formatCurrency(linePrice(unit, qty))}
+                        </p>
+                      </div>
+                      <div className="mt-2 flex flex-wrap items-center gap-3">
+                        <div className="flex items-center rounded-lg border border-border">
+                          <button
+                            type="button"
+                            className="min-h-[44px] min-w-[44px] px-2 text-lg leading-none text-text sm:min-h-0 sm:min-w-0 sm:px-3"
+                            onClick={() => updateQty(book.slug, qty - 1)}
+                            aria-label="Decrease quantity"
+                          >
+                            −
+                          </button>
+                          <span className="min-w-[2rem] text-center text-sm">
+                            {qty}
+                          </span>
+                          <button
+                            type="button"
+                            className="min-h-[44px] min-w-[44px] px-2 text-lg leading-none text-text sm:min-h-0 sm:min-w-0 sm:px-3"
+                            onClick={() => updateQty(book.slug, qty + 1)}
+                            aria-label="Increase quantity"
+                          >
+                            +
+                          </button>
+                        </div>
                         <button
                           type="button"
-                          className="px-3 py-1 text-lg leading-none text-text"
-                          onClick={() => updateQty(book.slug, qty - 1)}
-                          aria-label="Decrease quantity"
+                          className="text-sm text-danger hover:underline"
+                          onClick={() => {
+                            removeFromCart(book.slug);
+                            toast.success("Removed from cart");
+                          }}
                         >
-                          −
-                        </button>
-                        <span className="min-w-[2rem] text-center text-sm">
-                          {qty}
-                        </span>
-                        <button
-                          type="button"
-                          className="px-3 py-1 text-lg leading-none text-text"
-                          onClick={() => updateQty(book.slug, qty + 1)}
-                          aria-label="Increase quantity"
-                        >
-                          +
+                          Remove
                         </button>
                       </div>
-                      <button
-                        type="button"
-                        className="text-sm text-danger hover:underline"
-                        onClick={() => {
-                          removeFromCart(book.slug);
-                          toast.success("Removed from cart");
-                        }}
-                      >
-                        Remove
-                      </button>
                     </div>
                   </div>
-                  <div className="text-right font-mono text-sm text-text">
-                    {formatCurrency(linePrice(unit, qty))}
+                  <div className="mt-3 flex items-center justify-between border-t border-border pt-3 sm:hidden">
+                    <span className="text-sm text-muted">Line total</span>
+                    <span className="font-mono text-sm text-text">
+                      {formatCurrency(linePrice(unit, qty))}
+                    </span>
                   </div>
                 </div>
               );

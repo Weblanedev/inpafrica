@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 md:py-28">
       <section className="text-center">
-        <h1 className="font-display text-4xl font-bold text-text md:text-5xl">
+        <h1 className="font-display text-3xl font-bold text-text sm:text-4xl md:text-5xl">
           About INP Africa
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg text-muted">

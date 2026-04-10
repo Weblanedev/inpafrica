@@ -22,7 +22,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-      <h1 className="font-display text-4xl font-bold text-text">Get in Touch</h1>
+      <h1 className="font-display text-3xl font-bold text-text sm:text-4xl">
+        Get in Touch
+      </h1>
       <p className="mt-4 max-w-2xl text-muted">
         We’re here to help with orders, affiliates, and vendor questions.{" "}
         {AFFILIATE_TAGLINE}
@@ -42,8 +44,8 @@ export default function ContactPage() {
           </div>
           <div className="rounded-xl border border-border bg-surface p-8 shadow-sm">
             <h3 className="font-semibold text-text">Hours</h3>
-            <p className="mt-3 text-sm text-muted">
-              Mon to Fri 9:00 to 18:00 WAT · Sat 10:00 to 14:00 WAT
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Mon–Fri 9:00–18:00 WAT · Sat 10:00–14:00 WAT
             </p>
           </div>
         </div>

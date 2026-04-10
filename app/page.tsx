@@ -73,16 +73,16 @@ export default function Home() {
               Discover business and affiliate marketing books trusted by
               entrepreneurs.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href="/products"
-                className="inline-flex items-center rounded-lg bg-[#f5a623] px-6 py-3 font-semibold text-[#0d0d1a] shadow-lg transition hover:bg-[#ffc85a]"
+                className="inline-flex min-h-[44px] min-w-0 flex-1 items-center justify-center rounded-lg bg-[#f5a623] px-5 py-3 text-center text-sm font-semibold text-[#0d0d1a] shadow-lg transition hover:bg-[#ffc85a] sm:flex-initial sm:px-6 sm:text-base"
               >
                 Browse Books →
               </Link>
               <Link
                 href="/affiliate"
-                className="inline-flex items-center rounded-lg border border-white/40 bg-[#0d0d1a]/25 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:border-[#f5a623] hover:text-[#f5a623]"
+                className="inline-flex min-h-[44px] min-w-0 flex-1 items-center justify-center rounded-lg border border-white/40 bg-[#0d0d1a]/25 px-5 py-3 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-[#f5a623] hover:text-[#f5a623] sm:flex-initial sm:px-6 sm:text-base"
               >
                 Become an Affiliate
               </Link>
@@ -137,10 +137,10 @@ export default function Home() {
 
           <div className="relative order-1 min-h-[320px] lg:order-2 lg:min-h-[480px]">
             <div className="relative mx-auto max-w-lg lg:ml-auto">
-              <p className="mb-4 text-right font-display text-4xl font-bold leading-tight text-text md:text-5xl lg:text-6xl">
+              <p className="mb-4 text-balance text-right font-display text-3xl font-bold leading-tight text-text sm:text-4xl md:text-5xl lg:text-6xl">
                 Learn, Sell, &amp; Earn
               </p>
-              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-3xl bg-surface2 shadow-xl lg:ml-auto">
+              <div className="relative aspect-[4/5] w-full max-w-md min-w-0 overflow-hidden rounded-3xl bg-surface2 shadow-xl lg:ml-auto">
                 <Image
                   src="/images/hero-home.png"
                   alt="Professional using a tablet"
@@ -167,7 +167,7 @@ export default function Home() {
                   fill="none"
                 />
               </svg>
-              <div className="absolute bottom-8 right-0 rounded-full bg-text px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg">
+              <div className="absolute bottom-4 left-4 right-4 max-w-2xl rounded-full bg-text px-3 py-2 text-center text-[10px] font-bold uppercase tracking-wide text-white shadow-lg sm:bottom-8 sm:left-auto sm:right-0 sm:max-w-none sm:text-xs">
                 #1 Best marketing hub
               </div>
             </div>
@@ -229,8 +229,8 @@ export default function Home() {
             stay in the hundreds and thousands. Pick Starter to begin or Pro for
             higher commissions and full member pricing on books.
           </p>
-          <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-12">
-            <div className="rounded-2xl border border-border bg-bg p-10 shadow-sm">
+            <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-12">
+            <div className="rounded-2xl border border-border bg-bg p-6 shadow-sm sm:p-10">
               <h3 className="font-display text-2xl text-text">Starter</h3>
               <p className="mt-3 font-mono text-2xl font-semibold text-gold">
                 <CurrencyPrice amount={AFFILIATE_STARTER_ANNUAL_XAF} />{" "}
@@ -251,7 +251,7 @@ export default function Home() {
                 Get Starter Plan
               </Link>
             </div>
-            <div className="rounded-2xl border-2 border-gold bg-surface2 p-10 shadow-lg">
+            <div className="rounded-2xl border-2 border-gold bg-surface2 p-6 shadow-lg sm:p-10">
               <h3 className="font-display text-2xl text-text">Pro</h3>
               <p className="mt-3 font-mono text-2xl font-semibold text-gold">
                 <CurrencyPrice amount={AFFILIATE_PRO_ANNUAL_XAF} />{" "}

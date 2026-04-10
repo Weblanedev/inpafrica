@@ -28,7 +28,7 @@ export default function RegisterPage() {
 
   return (
     <div className="flex min-h-[70vh] items-center justify-center px-4 py-16">
-      <div className="w-full max-w-md rounded-2xl border border-border bg-surface p-8 shadow-xl">
+      <div className="w-full max-w-md rounded-2xl border border-border bg-surface p-5 shadow-xl sm:p-8">
         <div className="flex justify-center">
           <Logo />
         </div>
@@ -92,32 +92,42 @@ export default function RegisterPage() {
             <legend className="text-xs font-medium text-muted">
               I am registering as
             </legend>
-            <label className="flex cursor-pointer items-center gap-2 text-sm text-text">
+            <label className="flex cursor-pointer items-start gap-3 text-sm leading-snug text-text">
               <input
                 type="radio"
                 name="accountType"
+                className="mt-1 shrink-0"
                 checked={accountType === "customer"}
                 onChange={() => setAccountType("customer")}
               />
-              Shopper (save my details for faster checkout; standard book prices)
+              <span className="min-w-0">
+                Shopper (save my details for faster checkout; standard book
+                prices)
+              </span>
             </label>
-            <label className="flex cursor-pointer items-center gap-2 text-sm text-text">
+            <label className="flex cursor-pointer items-start gap-3 text-sm leading-snug text-text">
               <input
                 type="radio"
                 name="accountType"
+                className="mt-1 shrink-0"
                 checked={accountType === "affiliate"}
                 onChange={() => setAccountType("affiliate")}
               />
-              Affiliate (promote books &amp; courses; pay membership first)
+              <span className="min-w-0">
+                Affiliate (promote books &amp; courses; pay membership first)
+              </span>
             </label>
-            <label className="flex cursor-pointer items-center gap-2 text-sm text-text">
+            <label className="flex cursor-pointer items-start gap-3 text-sm leading-snug text-text">
               <input
                 type="radio"
                 name="accountType"
+                className="mt-1 shrink-0"
                 checked={accountType === "vendor"}
                 onChange={() => setAccountType("vendor")}
               />
-              Vendor (list &amp; resell; pay listing fee first)
+              <span className="min-w-0">
+                Vendor (list &amp; resell; pay listing fee first)
+              </span>
             </label>
           </fieldset>
 

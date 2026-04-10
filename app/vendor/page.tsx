@@ -20,7 +20,7 @@ export default function VendorPage() {
     <div>
       <section className="border-b border-border bg-gradient-to-br from-bg via-surface to-bg py-24 md:py-32">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <h1 className="font-display text-4xl font-bold text-text md:text-5xl">
+          <h1 className="font-display text-3xl font-bold text-text sm:text-4xl md:text-5xl">
             Sell Your Knowledge on INP Africa
           </h1>
           <p className="mt-6 text-lg text-muted">
@@ -107,13 +107,13 @@ export default function VendorPage() {
             <h2 className="font-display text-xl font-bold text-text md:text-2xl">
               Vendor workspace
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 break-words text-sm text-muted">
               Signed in as <strong className="text-text">@{user.username}</strong>.
               Wholesale-style member pricing applies to your purchases; submit
               products below. Email{" "}
               <a
                 href="mailto:vendors@inpafrica.test"
-                className="text-gold hover:underline"
+                className="break-all text-gold hover:underline sm:break-normal"
               >
                 vendors@inpafrica.test
               </a>{" "}

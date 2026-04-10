@@ -25,7 +25,7 @@ export default function ProductCard({
   const { formatCurrency } = useCurrency();
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition hover:border-gold/40 hover:shadow-md">
+    <div className="group flex min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition hover:border-gold/40 hover:shadow-md">
       <Link
         href={`/products/${book.slug}`}
         className="relative block aspect-[3/4] w-full overflow-hidden bg-surface2"
@@ -44,13 +44,13 @@ export default function ProductCard({
           </span>
         )}
       </Link>
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex min-w-0 flex-1 flex-col p-4">
         <span
           className={`mb-2 inline-block w-fit rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${categoryStyles[book.category]}`}
         >
           {book.category}
         </span>
-        <Link href={`/products/${book.slug}`}>
+        <Link href={`/products/${book.slug}`} className="min-w-0">
           <h3 className="font-display line-clamp-2 text-lg font-semibold leading-tight text-text transition hover:text-gold">
             {book.title}
           </h3>
