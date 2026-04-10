@@ -12,16 +12,14 @@ import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
 import {
   BROWSER_TAB_TITLE,
   DEFAULT_DESCRIPTION,
-  OG_IMAGE_DEFAULT,
   OG_SHARE_TITLE,
   SITE_NAME,
   getSiteUrl,
 } from "@/lib/siteMetadata";
 
 /**
- * Long `<title>` for the tab; explicit `openGraph`/`twitter` with full image URLs so
- * WhatsApp/Facebook do not drop `og:image` (merge quirks). Digitstem-style: short
- * `og:title` + tagline as `og:description`.
+ * Long `<title>` for the tab. Share preview title/description here; images come from
+ * `app/opengraph-image.jpg` + `app/twitter-image.jpg` (Next convention, Digitstem-style layout).
  */
 export const metadata: Metadata = {
   title: { absolute: BROWSER_TAB_TITLE },
@@ -32,13 +30,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: [OG_IMAGE_DEFAULT],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: [OG_IMAGE_DEFAULT.url],
   },
 };
 

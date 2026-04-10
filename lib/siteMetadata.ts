@@ -37,7 +37,11 @@ export const BROWSER_TAB_TITLE = `${SITE_NAME} | ${AFFILIATE_TAGLINE}`;
  */
 export const OG_SHARE_TITLE = SITE_NAME;
 
-/** WhatsApp / Facebook need JPG or PNG (not SVG). Regenerate: `npm run og:share`. */
+/**
+ * Source asset for link previews. Also synced to `app/opengraph-image.jpg` and
+ * `app/twitter-image.jpg` (Next.js file convention) so Meta/WhatsApp get a proper
+ * full-width og:image URL. Regenerate: `npm run og:share`.
+ */
 export const OG_IMAGE_DEFAULT = {
   url: "/assets/og-share.jpg",
   width: 1200,
@@ -91,6 +95,7 @@ export const rootMetadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  /** Link preview images: `app/opengraph-image.jpg` + `app/twitter-image.jpg` (Next.js file convention). */
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -98,13 +103,11 @@ export const rootMetadata: Metadata = {
     siteName: SITE_NAME,
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: [OG_IMAGE_DEFAULT],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: [OG_IMAGE_DEFAULT.url],
   },
   alternates: {
     canonical: "/",

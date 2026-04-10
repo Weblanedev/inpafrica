@@ -17,4 +17,10 @@ await sharp(fs.readFileSync(svgPath), { density: 300 })
   .jpeg({ quality: 92, mozjpeg: true })
   .toFile(outPath);
 
+const ogApp = path.join(root, "app/opengraph-image.jpg");
+const twApp = path.join(root, "app/twitter-image.jpg");
+fs.copyFileSync(outPath, ogApp);
+fs.copyFileSync(outPath, twApp);
+
 console.log("Wrote", outPath);
+console.log("Synced", ogApp, twApp);
