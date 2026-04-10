@@ -31,6 +31,12 @@ export const DEFAULT_DESCRIPTION = `${AFFILIATE_TAGLINE} Shop digital books in X
  */
 export const BROWSER_TAB_TITLE = `${SITE_NAME} | ${AFFILIATE_TAGLINE}`;
 
+/**
+ * Open Graph / WhatsApp / Facebook link preview title (Digitstem-style: brand only).
+ * Use {@link AFFILIATE_TAGLINE} for `og:description` (long body).
+ */
+export const OG_SHARE_TITLE = SITE_NAME;
+
 const keywords = [
   SITE_NAME,
   "digital books",
@@ -82,32 +88,26 @@ export const rootMetadata: Metadata = {
     locale: "en_US",
     url: getSiteUrl(),
     siteName: SITE_NAME,
-    title: BROWSER_TAB_TITLE,
-    description: DEFAULT_DESCRIPTION,
+    title: OG_SHARE_TITLE,
+    description: AFFILIATE_TAGLINE,
     images: [
       {
-        url: "/assets/og-inpafrica.svg",
+        /**
+         * Raster first: WhatsApp/Facebook/LinkedIn do not reliably support SVG og:image.
+         * 1200×630 JPG generated from hero photography; replace with a branded banner anytime.
+         */
+        url: "/assets/og-share.jpg",
         width: 1200,
         height: 630,
         alt: `${SITE_NAME}: digital books and affiliate marketplace`,
-      },
-      {
-        /** Second image: JPG fallback for crawlers that ignore SVG */
-        url: "/assets/rain-bennett-Z5JJifMtbCo-unsplash.jpg",
-        width: 6217,
-        height: 4145,
-        alt: `${SITE_NAME}: team and collaboration`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: BROWSER_TAB_TITLE,
-    description: DEFAULT_DESCRIPTION,
-    images: [
-      "/assets/og-inpafrica.svg",
-      "/assets/rain-bennett-Z5JJifMtbCo-unsplash.jpg",
-    ],
+    title: OG_SHARE_TITLE,
+    description: AFFILIATE_TAGLINE,
+    images: ["/assets/og-share.jpg"],
   },
   alternates: {
     canonical: "/",

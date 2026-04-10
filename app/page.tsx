@@ -9,11 +9,23 @@ import {
   AFFILIATE_STARTER_ANNUAL_XAF,
 } from "@/lib/pricing";
 import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
-import { BROWSER_TAB_TITLE } from "@/lib/siteMetadata";
+import { BROWSER_TAB_TITLE, DEFAULT_DESCRIPTION, OG_SHARE_TITLE } from "@/lib/siteMetadata";
 
-/** Avoid duplicate “| INP Africa” from the root `title.template` on `/`. */
+/**
+ * Long `<title>` for the tab; explicit `openGraph`/`twitter` so Next.js does not reuse
+ * the long title as `og:title`. Digitstem-style: short title + long tagline as description.
+ */
 export const metadata: Metadata = {
   title: { absolute: BROWSER_TAB_TITLE },
+  description: DEFAULT_DESCRIPTION,
+  openGraph: {
+    title: OG_SHARE_TITLE,
+    description: AFFILIATE_TAGLINE,
+  },
+  twitter: {
+    title: OG_SHARE_TITLE,
+    description: AFFILIATE_TAGLINE,
+  },
 };
 
 export default function Home() {
