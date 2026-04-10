@@ -37,6 +37,14 @@ export const BROWSER_TAB_TITLE = `${SITE_NAME} | ${AFFILIATE_TAGLINE}`;
  */
 export const OG_SHARE_TITLE = SITE_NAME;
 
+/** WhatsApp / Facebook need JPG or PNG (not SVG). Regenerate: `npm run og:share`. */
+export const OG_IMAGE_DEFAULT = {
+  url: "/assets/og-share.jpg",
+  width: 1200,
+  height: 630,
+  alt: `${SITE_NAME}: digital books and affiliate marketplace`,
+} as const;
+
 const keywords = [
   SITE_NAME,
   "digital books",
@@ -90,24 +98,13 @@ export const rootMetadata: Metadata = {
     siteName: SITE_NAME,
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: [
-      {
-        /**
-         * Raster first: WhatsApp/Facebook/LinkedIn do not reliably support SVG og:image.
-         * 1200×630 JPG generated from hero photography; replace with a branded banner anytime.
-         */
-        url: "/assets/og-share.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME}: digital books and affiliate marketplace`,
-      },
-    ],
+    images: [OG_IMAGE_DEFAULT],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
-    images: ["/assets/og-share.jpg"],
+    images: [OG_IMAGE_DEFAULT.url],
   },
   alternates: {
     canonical: "/",

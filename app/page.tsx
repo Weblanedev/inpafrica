@@ -9,22 +9,36 @@ import {
   AFFILIATE_STARTER_ANNUAL_XAF,
 } from "@/lib/pricing";
 import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
-import { BROWSER_TAB_TITLE, DEFAULT_DESCRIPTION, OG_SHARE_TITLE } from "@/lib/siteMetadata";
+import {
+  BROWSER_TAB_TITLE,
+  DEFAULT_DESCRIPTION,
+  OG_IMAGE_DEFAULT,
+  OG_SHARE_TITLE,
+  SITE_NAME,
+  getSiteUrl,
+} from "@/lib/siteMetadata";
 
 /**
- * Long `<title>` for the tab; explicit `openGraph`/`twitter` so Next.js does not reuse
- * the long title as `og:title`. Digitstem-style: short title + long tagline as description.
+ * Long `<title>` for the tab; explicit `openGraph`/`twitter` with full image URLs so
+ * WhatsApp/Facebook do not drop `og:image` (merge quirks). Digitstem-style: short
+ * `og:title` + tagline as `og:description`.
  */
 export const metadata: Metadata = {
   title: { absolute: BROWSER_TAB_TITLE },
   description: DEFAULT_DESCRIPTION,
   openGraph: {
+    type: "website",
+    url: getSiteUrl(),
+    siteName: SITE_NAME,
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
+    images: [OG_IMAGE_DEFAULT],
   },
   twitter: {
+    card: "summary_large_image",
     title: OG_SHARE_TITLE,
     description: AFFILIATE_TAGLINE,
+    images: [OG_IMAGE_DEFAULT.url],
   },
 };
 

@@ -17,10 +17,6 @@ const SLIDES = [
     alt: "Focus and productivity",
   },
   {
-    src: "/images/hero-home.png",
-    alt: "INP Africa marketplace",
-  },
-  {
     src: "/assets/charlesdeluvio-Lks7vei-eAg-unsplash.jpg",
     alt: "Digital learning",
   },
