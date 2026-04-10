@@ -1,3 +1,3 @@
 /** Used in hero-adjacent sections, affiliate page, CTAs, and metadata where relevant. */
 export const AFFILIATE_TAGLINE =
-  "We instantly connect vendors to buyers through our active affiliates.";
+  "An online digital marketplace that connects buyers to digital product vendors through highly trained and productive affiliates.";

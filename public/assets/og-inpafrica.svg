@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title">
+  <title id="og-title">INP Africa</title>
+  <defs>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f9fc"/>
+      <stop offset="55%" stop-color="#eef1f6"/>
+      <stop offset="100%" stop-color="#e8ecf4"/>
+    </linearGradient>
+    <linearGradient id="og-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0b038"/>
+      <stop offset="50%" stop-color="#e8941a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#og-gold)"/>
+  <text
+    x="600"
+    y="300"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="96"
+    font-weight="700"
+    letter-spacing="0.04em"
+    fill="#111827"
+  >INP AFRICA</text>
+  <rect x="350" y="330" width="500" height="5" rx="2.5" fill="url(#og-gold)"/>
+  <text
+    x="600"
+    y="410"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="26"
+    font-weight="500"
+    fill="#64748b"
+  >Digital books &amp; affiliate marketplace</text>
+</svg>

@@ -80,9 +80,8 @@ export default function Home() {
       <section className="relative overflow-hidden border-t border-border bg-[#f9f9f9] py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="order-2 max-w-xl lg:order-1">
-            <p className="text-lg font-medium text-text">
-              We instantly connect vendors to buyers through our active
-              affiliates.
+            <p className="max-w-xl text-base font-medium leading-relaxed text-text sm:text-lg">
+              {AFFILIATE_TAGLINE}
             </p>
             <Link
               href="/register"

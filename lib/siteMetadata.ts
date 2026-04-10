@@ -3,7 +3,11 @@ import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
 
 export const SITE_NAME = "INP Africa";
 
-/** Public site URL for canonical links, Open Graph, and JSON-LD. Set in production. */
+/**
+ * Public site URL for canonical links, Open Graph, and JSON-LD.
+ * Prefer `NEXT_PUBLIC_SITE_URL` (e.g. https://www.yourdomain.com) on Netlify/Vercel.
+ * Netlify also sets `URL` during build; Vercel sets `VERCEL_URL`.
+ */
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (fromEnv) return fromEnv.replace(/\/$/, "");
@@ -12,11 +16,15 @@ export function getSiteUrl(): string {
     const host = vercel.replace(/^https?:\/\//, "");
     return `https://${host}`;
   }
+  const netlify = process.env.URL?.trim();
+  if (netlify && /^https?:\/\//i.test(netlify)) {
+    return netlify.replace(/\/$/, "");
+  }
   return "http://localhost:3000";
 }
 
 /** Long-form description for meta tags, social cards, and search snippets. */
-export const DEFAULT_DESCRIPTION = `${AFFILIATE_TAGLINE} Shop digital books, member pricing for affiliates and vendors, and grow your business across Africa.`;
+export const DEFAULT_DESCRIPTION = `${AFFILIATE_TAGLINE} Shop digital books in XAF; member pricing for affiliates and vendors across Africa.`;
 
 /**
  * Browser tab title (default route). Includes brand + tagline for recognition when sharing tabs.
@@ -78,10 +86,17 @@ export const rootMetadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: "/images/hero-home.png",
+        url: "/assets/og-inpafrica.svg",
         width: 1200,
         height: 630,
         alt: `${SITE_NAME}: digital books and affiliate marketplace`,
+      },
+      {
+        /** Second image: JPG fallback for crawlers that ignore SVG */
+        url: "/assets/rain-bennett-Z5JJifMtbCo-unsplash.jpg",
+        width: 6217,
+        height: 4145,
+        alt: `${SITE_NAME}: team and collaboration`,
       },
     ],
   },
@@ -89,7 +104,10 @@ export const rootMetadata: Metadata = {
     card: "summary_large_image",
     title: BROWSER_TAB_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: ["/images/hero-home.png"],
+    images: [
+      "/assets/og-inpafrica.svg",
+      "/assets/rain-bennett-Z5JJifMtbCo-unsplash.jpg",
+    ],
   },
   alternates: {
     canonical: "/",
