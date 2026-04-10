@@ -1,0 +1,10 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+# Next.js on Netlify: use the official plugin so refreshes, deep links, and API
+# routes work. Do not add a generic SPA rule like /* -> /index.html (that pattern
+# is only for static export SPAs and breaks Next.js server features).
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_PUBLIC_SITE_URL = "https://inpafrica.app"

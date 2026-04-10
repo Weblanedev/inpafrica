@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -8,6 +9,12 @@ import {
   AFFILIATE_STARTER_ANNUAL_XAF,
 } from "@/lib/pricing";
 import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
+import { BROWSER_TAB_TITLE } from "@/lib/siteMetadata";
+
+/** Avoid duplicate “| INP Africa” from the root `title.template` on `/`. */
+export const metadata: Metadata = {
+  title: { absolute: BROWSER_TAB_TITLE },
+};
 
 export default function Home() {
   return (
