@@ -1,0 +1,40 @@
+[
+  {
+    "id": "2b37443f-eb84-4368-b70c-faf8bf8ca3e5",
+    "name": "MAYOWA KAYODE",
+    "username": "mart",
+    "email": "mayowasamuel86@gmail.com",
+    "passwordHash": "$2b$10$DUYyx9OWji8RXHSDODikgO9ZBpxnUf3Eol3EtRMzG3g.QT9TO8YnS",
+    "plan": "free",
+    "createdAt": "2026-04-10T14:43:15.135Z"
+  },
+  {
+    "id": "cdbbf349-381d-4533-876b-affc8c0aefc1",
+    "name": "MAYOWA KAYODE",
+    "username": "member_4b5a49beba",
+    "email": "mayowasamuel@gmail.com",
+    "passwordHash": "$2b$10$gVEACBD0xq5NIEQ2xERdeuzU4Dx/iNDxUU/zlHSxl/pf0UFaQSKPK",
+    "plan": "free",
+    "createdAt": "2026-04-10T14:59:55.428Z",
+    "phone": "8144466528",
+    "city": "Lagos",
+    "country": "US",
+    "state": "American Samoa",
+    "profileSetupComplete": false
+  },
+  {
+    "id": "97755f0d-c8bc-426f-80f7-dace4a48857e",
+    "name": "MAYOWA KAYODE",
+    "username": "member_9bbafe8720",
+    "email": "hgk@gmail.com",
+    "passwordHash": "$2b$10$MAAqUeP8SFaogwLW4LuZ3edV.OG/xSp6L/FSQTqtHTfITxcLnoGAe",
+    "plan": "free",
+    "createdAt": "2026-04-10T16:42:30.806Z",
+    "phone": "814446652800099",
+    "city": "hu",
+    "country": "AI",
+    "profileSetupComplete": false,
+    "accountType": "customer",
+    "membershipPaid": false
+  }
+]
