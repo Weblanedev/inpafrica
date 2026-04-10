@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
+import { CurrencyProvider } from "@/context/CurrencyContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ToastHost from "@/components/ToastHost";
+import { AFFILIATE_TAGLINE } from "@/lib/siteCopy";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-playfair",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm" });
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
-  title: "Under maintenance",
-  description: "This site is temporarily unavailable.",
+  title: "INP Africa | Business & Affiliate Marketing Books",
+  description: `${AFFILIATE_TAGLINE} Shop digital books and grow with INP Africa.`,
 };
 
 export default function RootLayout({
@@ -25,9 +32,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${playfair.variable} ${dmSans.variable} ${jetbrains.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col bg-bg font-body text-text antialiased">
+        <AuthProvider>
+          <CurrencyProvider>
+            <CartProvider>
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <ToastHost />
+            </CartProvider>
+          </CurrencyProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
