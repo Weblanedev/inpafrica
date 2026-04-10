@@ -1,25 +1,103 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: #f4f4f7;
+  --color-surface: #ffffff;
+  --color-surface2: #eef1f6;
+  --color-border: #e2e5ec;
+  --color-text: #111827;
+  --color-muted: #64748b;
+  --color-gold: #e8941a;
+  --color-gold-light: #f0b038;
+  --color-teal: #0d9488;
+  --color-danger: #dc2626;
+  --color-success: #16a34a;
+  --color-btn: #1e293b;
+  --color-btn-hover: #334155;
+  --color-white: #ffffff;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-dm), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #e8941a, #f5c96a, #e8941a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/*
+ * Unlayered so this wins over Tailwind @layer utilities (plain base rules do not).
+ * Clear cart, Remove, etc. stay pointer; disabled stays not-allowed.
+ */
+button:not(:disabled):not([disabled]),
+[role="button"]:not([aria-disabled="true"]),
+input[type="submit"]:not(:disabled):not([disabled]),
+input[type="button"]:not(:disabled):not([disabled]),
+input[type="reset"]:not(:disabled):not([disabled]) {
+  cursor: pointer !important;
+}
+
+button:disabled,
+button[disabled],
+[role="button"][aria-disabled="true"],
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled {
+  cursor: not-allowed !important;
 }
